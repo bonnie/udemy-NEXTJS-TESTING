@@ -1,0 +1,87 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "airbnb",
+    "prettier",
+    "next",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "plugins": [
+    "testing-library",
+    "jest-dom",
+    "jsx-a11y",
+    "simple-import-sort",
+    "prettier",
+    "react-hooks",
+    "@typescript-eslint"
+  ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      },
+      "typescript": {
+        "alwaysTryTypes": true
+      }
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "rules": {
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "import/no-extraneous-dependencies": [2, { "devDependencies": true }],
+    "react/prop-types": ["off"],
+    "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".jsx"] }],
+    "import/extensions": ["error", "never"],
+    "import/prefer-default-export": 0,
+    "import/no-anonymous-default-export": 0,
+    "import/no-unresolved": 2,
+    "sort-imports": "off",
+    "import/order": "off",
+    "no-shadow": "off",
+    "no-use-before-define": "off",
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/no-array-index-key": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-curly-newline": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/function-component-definition": "off",
+    "quotes": "off",
+    "object-curly-spacing": 1,
+    "array-bracket-spacing": 1,
+    "prettier/prettier": [
+      "warn",
+      {
+        "printWidth": 80,
+        "singleQuote": false,
+        "endOfLine": "auto"
+      }
+    ],
+    "simple-import-sort/exports": "error",
+    "simple-import-sort/imports": [
+      "warn",
+      {
+        "groups": [["^\\u0000"], ["^@?\\w"], ["^"], ["^\\."]]
+      }
+    ]
+  },
+  "overrides": [
+    // Only use Testing Library lint rules in jest test files
+    {
+      "files": ["__tests__/**/?(*.)+(spec|test).[jt]s?(x)"],
+      "extends": ["plugin:testing-library/react"]
+    },
+    // use Cypress lint rules in Cypress test files
+    {
+      "files": ["cypress/**/?(*.)+(spec|test).[jt]s?(x)", "cypress/support/*"],
+      "extends": ["plugin:cypress/recommended"],
+      "env": { "cypress/globals": true }
+    }
+  ]
+}
