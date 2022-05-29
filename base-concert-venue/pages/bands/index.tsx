@@ -11,8 +11,6 @@ const removeLeadingThe = (bandName: string) => bandName.replace(/^the /i, "");
 // https://nextjs.org/docs/basic-features/data-fetching/incremental-static-regeneration
 
 export async function getStaticProps() {
-  // can't use getShows here because getStaticProps runs while building;
-  // Server isn't running while building!
   const isrBands = await getBands();
   isrBands.sort((a, b) =>
     removeLeadingThe(a.name) > removeLeadingThe(b.name) ? 0 : -1
