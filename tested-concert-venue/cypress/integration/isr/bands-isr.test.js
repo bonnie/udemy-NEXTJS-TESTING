@@ -1,10 +1,10 @@
-it("displays bands when skipping client-side bundle, confirming initial ISR", () => {
+it("displays bands when skipping client-side javascript, confirming initial ISR", () => {
   // reference: https://glebbahmutov.com/blog/ssr-e2e/
   cy.request("/bands")
     .its("body")
     .then((html) => {
-      // remove the application code bundle so that it doesn't override the static generation
-      const staticHtml = html.replace('<script src="/bundle.js"></script>', "");
+      // remove all JavaScript so that it doesn't override the static generation
+      const staticHtml = html.replace(/<script.*?>.*?<\/script>/gm, "");
       cy.state("document").write(staticHtml);
     });
 
