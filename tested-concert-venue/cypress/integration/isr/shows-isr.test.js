@@ -1,9 +1,9 @@
-it("skips client-side javascript, confirming data from ISR cache", () => {
-  // reference: https://glebbahmutov.com/blog/ssr-e2e/
+it("skips client-side bundle, confirming data from ISR cache", () => {
+  // reference: https://glebbahmutov.com/blog/ssr-e2e/#removing-application-bundle
   cy.request("/shows")
     .its("body")
     .then((html) => {
-      // remove all JavaScript so that it doesn't override the static generation
+      // remove the scripts, so they don't start automatically
       const staticHtml = html.replace(/<script.*?>.*?<\/script>/gm, "");
       cy.state("document").write(staticHtml);
     });
