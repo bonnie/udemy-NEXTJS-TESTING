@@ -15,10 +15,8 @@ handler.get(async (req: NextApiRequest, res: NextApiResponse) => {
   }
 
   // revalidate pages that can have ISR data updates
-  // note: this will change to `res.revalidate` when
-  //    revalidate-on-demand is out of beta
-  await res.unstable_revalidate("/shows");
-  await res.unstable_revalidate("/bands");
+  await res.revalidate("/shows");
+  await res.revalidate("/bands");
 
   return res.status(200).end();
 });

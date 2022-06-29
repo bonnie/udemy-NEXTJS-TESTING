@@ -80,7 +80,7 @@
     },
     // use Cypress lint rules in Cypress test files
     {
-      "files": ["cypress/**/?(*.)+(spec|test).[jt]s?(x)", "cypress/support/*"],
+      "files": ["cypress/e2e/**/*.cy.js", "cypress/support/*"],
       "extends": ["plugin:cypress/recommended"],
       "env": { "cypress/globals": true }
     }
