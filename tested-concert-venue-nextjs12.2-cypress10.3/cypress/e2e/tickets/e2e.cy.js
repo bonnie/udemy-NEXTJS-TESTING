@@ -44,6 +44,7 @@ it("completes the ticket purchase flow, starting not signed in", () => {
     .last()
     .click();
 
+  cy.reload();
   cy.findByText(/95 seats left/i).should("exist");
 
   // sign out
