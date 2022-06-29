@@ -21,9 +21,7 @@ handler.post(async (req: NextApiRequest, res: NextApiResponse) => {
   const addedBand = await addBand(newBand);
 
   // revalidate bands page for ISR
-  // note: this will change to `res.revalidate` when
-  // this feature is out of beta
-  await res.unstable_revalidate("/bands");
+  await res.revalidate("/bands");
   return res.json({ band: addedBand, revalidated: true });
 });
 
