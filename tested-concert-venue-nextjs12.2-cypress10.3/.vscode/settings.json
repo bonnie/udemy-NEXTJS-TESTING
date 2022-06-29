@@ -1,0 +1,22 @@
+{
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "[javascript,javascriptreact,typescript,typescriptreact]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    }
+  },
+  "[json]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "editor.tabSize": 2,
+  "files.eol": "\n",
+  "files.associations": {
+    ".env*": "env"
+  }
+}

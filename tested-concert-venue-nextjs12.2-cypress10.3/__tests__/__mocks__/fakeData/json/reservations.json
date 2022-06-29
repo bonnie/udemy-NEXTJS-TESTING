@@ -1,0 +1,32 @@
+[
+  {
+    "id": 0,
+    "showId": 0,
+    "userId": 1,
+    "seatCount": 4
+  },
+  {
+    "id": 1,
+    "showId": 0,
+    "userId": 100,
+    "seatCount": 386
+  },
+  {
+    "id": 2,
+    "showId": 1,
+    "userId": 1,
+    "seatCount": 3
+  },
+  {
+    "id": 3,
+    "showId": 1,
+    "userId": 100,
+    "seatCount": 397
+  },
+  {
+    "id": 4,
+    "showId": 2,
+    "userId": 100,
+    "seatCount": 300
+  }
+]
