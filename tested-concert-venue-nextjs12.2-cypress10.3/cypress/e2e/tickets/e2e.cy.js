@@ -36,7 +36,7 @@ it("completes the ticket purchase flow, starting not signed in", () => {
   cy.findByRole("button", { name: /see all purchases/i }).click();
   cy.findByText(/the joyous nun riot/i).should("exist");
 
-  // check that the number of tickets on reservation page has reduced to 98
+  // check that the number of tickets on reservation page has reduced to 95
   cy.findByRole("button", { name: /shows/i }).click();
 
   // click second (and last) tickets button
