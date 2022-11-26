@@ -36,6 +36,10 @@ it("completes the ticket purchase flow, starting not signed in", () => {
   cy.findByRole("button", { name: /see all purchases/i }).click();
   cy.findByText(/the joyous nun riot/i).should("exist");
 
+  // wait 0.5 seconds to avoid race conditions
+  // eslint-disable-next-line cypress/no-unnecessary-waiting
+  cy.wait(500);
+
   // check that the number of tickets on reservation page has reduced to 98
   cy.findByRole("button", { name: /shows/i }).click();
 
