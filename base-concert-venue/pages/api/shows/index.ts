@@ -29,11 +29,11 @@ handler.post(async (req: NextApiRequest, res: NextApiResponse) => {
     return res.status(401).json({ message: "Invalid revalidation token" });
   }
 
-  // add band (here is where authorization would be validated)
+  // add show (here is where authorization would be validated)
   const { newShow } = req.body;
   const addedShow = await addShow(newShow);
 
-  // revalidate bands page for ISR
+  // revalidate shows page for ISR
   // note: this will change to `res.revalidate` when
   // this feature is out of beta
   await res.unstable_revalidate("/shows");
