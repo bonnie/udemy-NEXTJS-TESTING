@@ -3,7 +3,7 @@
     "id": 0,
     "scheduledAt": "2022-04-15T00:32:48.721Z",
     "band": {
-      "id": 1,
+      "id": 0,
       "name": "The Wandering Bunnies",
       "description": "blistering world music, supported by a moody water glass orchestra",
       "image": {
@@ -18,7 +18,7 @@
     "id": 1,
     "scheduledAt": "2022-04-16T00:32:48.721Z",
     "band": {
-      "id": 2,
+      "id": 1,
       "name": "Shamrock Pete",
       "description": "fusion americana, featuring a hilarious musical saw",
       "image": {
@@ -33,7 +33,7 @@
     "id": 2,
     "scheduledAt": "2022-04-17T00:32:48.721Z",
     "band": {
-      "id": 3,
+      "id": 2,
       "name": "The Joyous Nun Riot",
       "description": "edgy funk with an improvisational vibe",
       "image": {
