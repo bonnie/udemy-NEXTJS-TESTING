@@ -40,8 +40,10 @@ test("GET /api/shows/[showId] returns the data for the correct show ID", async (
 test("POST /api/shows returns 401 status for incorrect revalidation secret", async () => {
   await testApiHandler({
     handler: showsHandler,
+    // updated not to use queryStringURLParams; for details, see
+    // https://www.udemy.com/course/nextjs-testing/learn/#questions/19882336/
     paramsPatcher: (params) => {
-      params.queryStringURLParams = { secret: "NOT THE REAL SECRET" };
+      params.secret = "NOT THE REAL SECRET";
     },
     test: async ({ fetch }) => {
       const res = await fetch({ method: "POST" });
