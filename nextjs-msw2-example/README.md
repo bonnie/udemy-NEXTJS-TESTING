@@ -47,4 +47,7 @@ const customJestConfig = {
 - rewrite _pages/home/index.tsx_ to include `fetch` call
 - add _pages/home/index.test.tsx_
 - update _jest.setup.js_ and create \_\_mocks\_\_ directory, following https://github.com/mswjs/examples/tree/main/examples/with-jest
--
+
+## Other reference
+
+- See [Next.js --with-msw example](https://github.com/vercel/next.js/tree/canary/examples/with-msw) for an example of using environment variables to enable / disable mocking. Note: this example does not show setup or examples of any tests with Jest or React Testing Library.
