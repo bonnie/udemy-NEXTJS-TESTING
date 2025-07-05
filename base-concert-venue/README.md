@@ -9,9 +9,13 @@
 1. Run `cp .env.local_template .env.local`
 1. In _.env.local_:
 
-- add long, hard-to-guess strings as the values for `NEXTAUTH_SECRET` and `REVALIDATION_SECRET`
+   - add long, hard-to-guess strings as the values for `NEXTAUTH_SECRET` and `REVALIDATION_SECRET`
 
-  - command to generate a random string: `openssl rand -base64 32`
+     - here's a helpful command to generate a random string: `openssl rand -base64 32`
+
+1. Data will be generated [the first time the shows page is loaded](https://github.com/bonnie/udemy-NEXTJS-TESTING/blob/main/base-concert-venue/pages/api/shows/index.ts#L11-L15).
+
+   However, if you'd like to generate data before that, you can run `npm run data:generate`.
 
 ## Running the App
 

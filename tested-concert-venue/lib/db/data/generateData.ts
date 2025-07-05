@@ -121,3 +121,13 @@ export async function generateData(): Promise<void> {
   const bands = await generateBands();
   await generateShows(bands);
 }
+
+// Data will automatically generate the first time the "shows" page loads (see
+// https:// github.com/bonnie/udemy-NEXTJS-TESTING/blob/main/base-concert-venue/pages/api/shows/index.ts#L11-L15)
+// If you'd prefer to generate data manually, you can run `npm run data:generate` to trigger the
+// `require.main === module` condition and run `generateData()`.
+
+// Check if the current module is the main entry point
+if (require.main === module) {
+  generateData(); // Call the function only if the file is run directly
+}

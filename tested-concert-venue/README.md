@@ -11,11 +11,15 @@
 1. In _.env.test.local_, populate `CYPRESS_TEST_USER_EMAIL` AND `CYPRESS_TEST_PASSWORD` with data that matches test database data
 1. In _.env.local_ and _.env.test.local_:
 
-- add site base URL for `NEXTAUTH_URL` and `NEXT_PUBLIC_BASE_URL`
+   - add site base URL for `NEXTAUTH_URL` and `NEXT_PUBLIC_BASE_URL`
 
-- add long, hard-to-guess strings as the values for `NEXTAUTH_SECRET` and `REVALIDATION_SECRET`
+   - add long, hard-to-guess strings as the values for `NEXTAUTH_SECRET` and `REVALIDATION_SECRET`
 
-  - command to generate a random string: `openssl rand -base64 32`
+     - command to generate a random string: `openssl rand -base64 32`
+
+1. Data will be generated [the first time the shows page is loaded](https://github.com/bonnie/udemy-NEXTJS-TESTING/blob/main/base-concert-venue/pages/api/shows/index.ts#L11-L15).
+
+   However, if you'd like to generate data before that, you can run `npm run data:generate`.
 
 ## Running the App
 

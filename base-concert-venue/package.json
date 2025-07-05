@@ -6,7 +6,8 @@
     "build": "next build",
     "start": "next start",
     "test": "jest --watch",
-    "test:ci": "jest --ci"
+    "test:ci": "jest --ci",
+    "data:generate": "tsx ./lib/db/data/generateData"
   },
   "dependencies": {
     "@chakra-ui/react": "1.8.6",
@@ -53,6 +54,7 @@
     "eslint-config-next": "12.1.0",
     "eslint-plugin-testing-library": "5.0.1",
     "jest": "27.4.5",
+    "tsx": "^4.20.3",
     "typescript": "4.5.4",
     "typescript-eslint": "0.0.1-alpha.0"
   }
